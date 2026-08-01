@@ -5,7 +5,7 @@ Catatan build artefak .ex5 di repo ini.
 | Item | Nilai |
 |---|---|
 | Waktu build | `2026-08-01 23:48:27 +07:00` |
-| Source repo | https://github.com/handi425/TVC.git |
+| Source repo | privat (tidak dipublikasikan) |
 | Source commit | `62bebdedf24b44293d9fce3cacba978ba4202c9d` (main) |
 | Compiler | MetaEditor64.exe `5.0.0.6090` |
 | Terminal | terminal64.exe `5.0.0.6090` |
@@ -43,13 +43,13 @@ File lain: 0 errors, 0 warnings.
 ## Dependency eksternal
 
 `HarmonicTelegramScannerEA.mq5` meng-include `..\Indicators\HarmonicFinder\HPFMatcher.mqh`
-beserta 13 `.mqh` HarmonicFinder lain. **File-file ini tidak ada di repo source TVC** —
-diambil dari data folder MT5 saat build:
+beserta 13 `.mqh` HarmonicFinder lain. **File-file ini belum masuk ke repo source** —
+saat build diambil dari library HarmonicFinder yang terpasang di data folder MT5:
 
 ```
-%APPDATA%\MetaQuotes\Terminal\94C2289E5A5E455C2C90A42B6584638F\MQL5\Indicators\HarmonicFinder\
+<MT5 Data Folder>\MQL5\Indicators\HarmonicFinder\
 ```
 
-Selama `.mqh` tersebut belum di-commit ke repo TVC, build EA ini **tidak reproducible**
+Selama `.mqh` tersebut belum di-commit ke repo source, build EA ini **tidak reproducible**
 di mesin lain.
 

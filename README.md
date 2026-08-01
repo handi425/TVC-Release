@@ -1,9 +1,9 @@
-# TVC-Compiled
+# TVC-Release
 
 Repository distribusi **binary saja** untuk EA dan Indicator TVC.
-Hanya berisi file `.ex5` hasil compile — tidak ada source `.mq5`/`.mqh` di sini.
+Hanya berisi file `.ex5` siap pakai — tidak ada source `.mq5`/`.mqh` di sini.
 
-Source code ada di repo terpisah: <https://github.com/handi425/TVC.git>
+Source code disimpan di repository privat terpisah.
 
 ## Isi
 

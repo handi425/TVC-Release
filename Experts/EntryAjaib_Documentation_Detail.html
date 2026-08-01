@@ -1,0 +1,2883 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EntryAjaib EA v30.77 - Dokumentasi Lengkap</title>
+    <style>
+      :root {
+        --bg: #f6f8fb;
+        --surface: #ffffff;
+        --ink: #172033;
+        --muted: #5f6d84;
+        --line: #d9e1ec;
+        --brand: #1457b8;
+        --brand-dark: #0d3f86;
+        --green: #1f8a52;
+        --red: #c73d3d;
+        --orange: #c97918;
+        --teal: #157d8a;
+        --purple: #7044a8;
+        --slate: #26364d;
+        --soft-blue: #eaf2ff;
+        --soft-green: #eaf7ef;
+        --soft-red: #fff0f0;
+        --soft-orange: #fff6e8;
+        --code: #f2f5f9;
+        --shadow: 0 12px 30px rgba(23, 32, 51, 0.08);
+        --radius: 8px;
+        --max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        line-height: 1.65;
+        font-size: 16px;
+      }
+
+      a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.94);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(10px);
+      }
+
+      .topbar-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 12px 22px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0;
+        color: var(--slate);
+        white-space: nowrap;
+      }
+
+      .brand small {
+        color: var(--muted);
+        font-weight: 600;
+        margin-left: 8px;
+      }
+
+      .top-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--slate);
+        border-radius: 999px;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .hero {
+        background: linear-gradient(180deg, #ffffff 0%, #eef4fc 100%);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 48px 22px 36px;
+        display: grid;
+        grid-template-columns: 1.45fr 0.8fr;
+        gap: 28px;
+        align-items: end;
+      }
+
+      .eyebrow {
+        color: var(--brand);
+        font-size: 13px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin: 0 0 10px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 5vw, 58px);
+        line-height: 1.02;
+        margin: 0 0 16px;
+        color: #10192a;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 18px;
+        max-width: 760px;
+        margin: 0 0 22px;
+      }
+
+      .hero-note {
+        border-left: 4px solid var(--orange);
+        padding: 12px 14px;
+        background: var(--soft-orange);
+        color: #6a430d;
+        border-radius: 0 var(--radius) var(--radius) 0;
+        max-width: 780px;
+      }
+
+      .hero-panel {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+
+      .hero-panel h2 {
+        margin-top: 0;
+        font-size: 18px;
+        color: var(--slate);
+      }
+
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .stat {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 10px;
+        background: #fbfdff;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 19px;
+        color: var(--brand-dark);
+        line-height: 1.2;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .layout {
+        max-width: var(--max);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 28px;
+        padding: 28px 22px 56px;
+      }
+
+      .toc {
+        position: sticky;
+        top: 70px;
+        align-self: start;
+        max-height: calc(100vh - 86px);
+        overflow: auto;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .toc h2 {
+        margin: 0 0 8px;
+        font-size: 15px;
+        color: var(--slate);
+      }
+
+      .toc a {
+        display: block;
+        padding: 6px 0;
+        color: var(--muted);
+        font-size: 14px;
+        border-bottom: 1px solid #edf1f6;
+      }
+
+      .toc a:last-child {
+        border-bottom: 0;
+      }
+      .toc a:hover {
+        color: var(--brand);
+        text-decoration: none;
+      }
+
+      main {
+        min-width: 0;
+      }
+
+      section {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 26px;
+        margin-bottom: 18px;
+        box-shadow: var(--shadow);
+        scroll-margin-top: 82px;
+      }
+
+      h2 {
+        font-size: 28px;
+        line-height: 1.2;
+        margin: 0 0 14px;
+        color: #111b2c;
+        letter-spacing: 0;
+      }
+
+      h3 {
+        font-size: 20px;
+        margin: 28px 0 10px;
+        color: var(--slate);
+        letter-spacing: 0;
+      }
+
+      h4 {
+        font-size: 16px;
+        margin: 22px 0 8px;
+        color: #26364d;
+      }
+
+      p {
+        margin: 0 0 12px;
+      }
+
+      ul,
+      ol {
+        margin-top: 8px;
+        padding-left: 24px;
+      }
+      li {
+        margin: 5px 0;
+      }
+
+      .summary-grid,
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .box {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 14px;
+        background: #fbfdff;
+      }
+
+      .box h3,
+      .box h4 {
+        margin-top: 0;
+      }
+
+      .box p:last-child,
+      .box ul:last-child,
+      .box ol:last-child {
+        margin-bottom: 0;
+      }
+
+      .callout {
+        border-radius: var(--radius);
+        padding: 14px 16px;
+        margin: 16px 0;
+        border: 1px solid var(--line);
+        background: var(--soft-blue);
+      }
+
+      .callout strong {
+        color: var(--brand-dark);
+      }
+      .callout.warning {
+        background: var(--soft-orange);
+        border-color: #f0c98f;
+      }
+      .callout.danger {
+        background: var(--soft-red);
+        border-color: #efb1b1;
+      }
+      .callout.success {
+        background: var(--soft-green);
+        border-color: #bde3c8;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 999px;
+        font-size: 12px;
+        line-height: 1.3;
+        font-weight: 800;
+        color: #fff;
+        vertical-align: middle;
+      }
+
+      .badge.green {
+        background: var(--green);
+      }
+      .badge.red {
+        background: var(--red);
+      }
+      .badge.blue {
+        background: var(--brand);
+      }
+      .badge.orange {
+        background: var(--orange);
+      }
+      .badge.purple {
+        background: var(--purple);
+      }
+      .badge.gray {
+        background: #6a778b;
+      }
+      .badge.teal {
+        background: var(--teal);
+      }
+
+      code,
+      kbd {
+        font-family: "Cascadia Mono", Consolas, Menlo, monospace;
+        background: var(--code);
+        border: 1px solid #dbe3ee;
+        border-radius: 5px;
+        padding: 2px 5px;
+        color: #213049;
+        font-size: 0.92em;
+      }
+
+      pre {
+        background: #111827;
+        color: #edf4ff;
+        border-radius: var(--radius);
+        padding: 14px;
+        overflow: auto;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        color: inherit;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 14px 0 20px;
+        font-size: 14px;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--line);
+        padding: 10px 12px;
+        vertical-align: top;
+        text-align: left;
+      }
+
+      th {
+        background: #eef4fb;
+        color: #1c2a40;
+        font-weight: 800;
+      }
+
+      tr:nth-child(even) td {
+        background: #fbfcfe;
+      }
+
+      .steps {
+        counter-reset: step;
+        display: grid;
+        gap: 10px;
+        margin: 14px 0;
+      }
+
+      .step {
+        position: relative;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: #fbfdff;
+        padding: 14px 14px 14px 52px;
+      }
+
+      .step::before {
+        counter-increment: step;
+        content: counter(step);
+        position: absolute;
+        left: 14px;
+        top: 14px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--brand);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        font-size: 13px;
+      }
+
+      .step strong {
+        display: block;
+        color: var(--slate);
+        margin-bottom: 4px;
+      }
+
+      .button-map {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin: 16px 0;
+      }
+
+      .button-tile {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 12px;
+        background: #fff;
+      }
+
+      .button-tile strong {
+        display: inline-block;
+        margin-bottom: 6px;
+      }
+
+      .footer {
+        max-width: var(--max);
+        margin: 0 auto 34px;
+        padding: 0 22px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .print-only {
+        display: none;
+      }
+
+      @media (max-width: 980px) {
+        .hero-inner,
+        .layout {
+          grid-template-columns: 1fr;
+        }
+
+        .toc {
+          position: static;
+          max-height: none;
+        }
+
+        .button-map {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 680px) {
+        body {
+          font-size: 15px;
+        }
+
+        .topbar-inner {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .hero-inner,
+        .layout {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+
+        section {
+          padding: 18px;
+        }
+
+        .summary-grid,
+        .feature-grid,
+        .stat-grid,
+        .button-map {
+          grid-template-columns: 1fr;
+        }
+
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+
+      @media print {
+        .topbar,
+        .toc {
+          display: none;
+        }
+
+        body {
+          background: #fff;
+          color: #000;
+          font-size: 12px;
+        }
+
+        .hero {
+          background: #fff;
+        }
+
+        .hero-inner,
+        .layout,
+        .footer {
+          display: block;
+          max-width: none;
+          padding: 0;
+        }
+
+        section,
+        .hero-panel {
+          box-shadow: none;
+          border: 1px solid #bbb;
+          break-inside: avoid;
+        }
+
+        .print-only {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">EntryAjaib EA <small>Dokumentasi v30.77</small></div>
+        <div class="top-actions">
+          <span class="chip">Platform: MetaTrader 5</span>
+          <span class="chip">File: EntryAjaib.mq5</span>
+          <span class="chip">Mode: Panel Eksekusi</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Panduan fitur dan cara penggunaan</p>
+          <h1>Dokumentasi Lengkap EntryAjaib EA v30.77</h1>
+          <p class="lead">
+            EntryAjaib adalah Expert Advisor untuk MetaTrader 5 yang berfungsi
+            sebagai panel eksekusi, perencanaan entry, pengelolaan SL/TP,
+            manajemen basket posisi, trailing stop, dan monitoring risiko
+            margin. EA ini bukan robot sinyal otomatis; keputusan entry tetap
+            berada pada trader.
+          </p>
+          <div class="hero-note">
+            <strong>Catatan penting:</strong> dokumentasi ini mengikuti isi file
+            <code>EntryAjaib.mq5</code> versi <code>30.77</code>. Beberapa
+            fungsi ada di kode namun belum terhubung ke tombol UI; statusnya
+            dijelaskan pada bagian "Fitur Internal".
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <h2>Ringkasan Versi</h2>
+          <div class="stat-grid">
+            <div class="stat">
+              <strong>30.77</strong><span>EA Version</span>
+            </div>
+            <div class="stat"><strong>0</strong><span>Default Magic</span></div>
+            <div class="stat"><strong>5</strong><span>Default Layer</span></div>
+            <div class="stat"><strong>2.0</strong><span>Default RR</span></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="layout">
+      <nav class="toc" aria-label="Daftar isi">
+        <h2>Daftar Isi</h2>
+        <a href="#implementasi">0. Cara Implementasi EA</a>
+        <a href="#overview">1. Gambaran Umum</a>
+        <a href="#install">2. Instalasi dan Persiapan</a>
+        <a href="#inputs">3. Input Parameter</a>
+        <a href="#ui">4. Struktur Panel UI</a>
+        <a href="#controls">5. Kontrol LOT, GRID, SL, TP, LYR, TRAIL</a>
+        <a href="#manual-entry">6. Buy Now dan Sell Now</a>
+        <a href="#sltp">7. SL/TP ON/OFF, Set SL, Set TP</a>
+        <a href="#close">8. Close dan Delete Pending</a>
+        <a href="#plan">9. Plan Buy dan Plan Sell</a>
+        <a href="#execute-plan">10. EX Normal dan EX Martingle</a>
+        <a href="#basket-tp">11. Basket TP</a>
+        <a href="#slplus">12. SL+ / Basket SL</a>
+        <a href="#bep">13. BEP</a>
+        <a href="#partial">14. TP Partial</a>
+        <a href="#trailing">15. Trailing Stop</a>
+        <a href="#stats">16. Panel Statistik</a>
+        <a href="#margin-lines">17. MC Line dan Liquidation Stop</a>
+        <a href="#cent">18. Deteksi Akun Cent</a>
+        <a href="#internal">19. Fitur Internal di Kode</a>
+        <a href="#workflows">20. Workflow Penggunaan</a>
+        <a href="#risk">21. Catatan Risiko</a>
+        <a href="#push-notif">22. Push Notification Mobile</a>
+        <a href="#responsive-ui">23. Responsive UI (HiDPI)</a>
+        <a href="#changelog">24. Riwayat Versi</a>
+        <a href="#quick-reference">25. Quick Reference</a>
+      </nav>
+
+      <main>
+        <section id="implementasi">
+          <h2>0. Cara Implementasi EA</h2>
+          <p>
+            Bagian ini menjelaskan langkah demi langkah cara mengimplementasikan
+            EntryAjaib EA dari nol hingga siap digunakan untuk trading di
+            MetaTrader 5. Ikuti urutan langkah berikut agar EA berjalan dengan
+            benar.
+          </p>
+
+          <h3>A. Persiapan File dan Lokasi</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Buka Data Folder MetaTrader 5</strong>
+              Di terminal MT5, klik menu <code>File → Open Data Folder</code>.
+              Folder ini adalah direktori data terminal tempat seluruh file MQL5
+              disimpan.
+            </div>
+            <div class="step">
+              <strong>Masuk ke folder Experts</strong>
+              Navigasi ke <code>MQL5\Experts</code>. Folder ini adalah lokasi
+              khusus untuk file Expert Advisor (<code>.mq5</code> dan
+              <code>.ex5</code>).
+            </div>
+            <div class="step">
+              <strong>Salin file EntryAjaib</strong>
+              Copy file <code>EntryAjaib.mq5</code> (dan
+              <code>EntryAjaib.ex5</code> jika sudah dikompilasi) ke dalam
+              folder <code>MQL5\Experts</code>. Anda juga boleh membuat
+              subfolder, misalnya
+              <code>MQL5\Experts\Entry_Ajaib\EntryAjaib.mq5</code>.
+            </div>
+            <div class="step">
+              <strong>Refresh Navigator</strong>
+              Kembali ke terminal MT5, klik kanan pada bagian
+              <code>Expert Advisors</code> di panel Navigator, lalu pilih
+              <code>Refresh</code>. Jika tidak muncul, restart terminal MT5.
+            </div>
+          </div>
+
+          <h3>B. Setting Akun dan Permission</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Login ke akun trading</strong>
+              Gunakan akun demo untuk pengujian pertama kali. Pastikan koneksi
+              ke server broker stabil.
+            </div>
+            <div class="step">
+              <strong>Aktifkan Algo Trading</strong>
+              Di toolbar atas MT5, pastikan tombol
+              <code>Algo Trading</code> aktif (berwarna hijau). Jika tidak
+              aktif, EA tidak akan bisa mengirim order.
+            </div>
+            <div class="step">
+              <strong>Izinkan EA trading otomatis</strong>
+              Saat memasang EA, centang opsi <code>Allow Algo Trading</code> di
+              jendela input EA. Tanpa centang ini, EA hanya tampil di chart
+              tetapi tidak bisa eksekusi order.
+            </div>
+            <div class="step">
+              <strong>Cek permission symbol</strong>
+              Pastikan symbol yang dipakai (misalnya XAUUSD, EURUSD) mengizinkan
+              trading otomatis dan tidak diblokir oleh broker. Beberapa akun
+              hanya memperbolehkan trading manual.
+            </div>
+            <div class="step">
+              <strong>Aktifkan Push Notification (opsional)</strong>
+              Buka <code>Tools &gt; Options &gt; Notifications</code>, centang
+              <code>Enable Push Notifications</code>, lalu isi MetaQuotes ID dari
+              aplikasi MT5 mobile. Diperlukan agar notifikasi pending order
+              tereksekusi masuk ke HP. Detail di bagian 22.
+            </div>
+          </div>
+
+          <h3>C. Pasang EA ke Chart</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Buka chart symbol target</strong>
+              Buka chart instrumen yang ingin dikelola, misalnya XAUUSD.
+              Pastikan timeframe sesuai strategi (EA bekerja di timeframe apa
+              saja karena berbasis panel, bukan sinyal indikator).
+            </div>
+            <div class="step">
+              <strong>Drag EA ke chart</strong>
+              Dari panel Navigator, tarik <code>EntryAjaib</code> ke area chart.
+              Jendela pengaturan EA akan muncul.
+            </div>
+            <div class="step">
+              <strong>Atur Input Parameter awal</strong>
+              Set nilai awal seperti <code>InpMagicNumber</code>,
+              <code>InpEntryLot</code>, <code>InpLayerCount</code>,
+              <code>InpMultiStep</code>, <code>InpSLPoints</code>,
+              <code>InpRewardRatio</code>, dan parameter lain. Lihat detail di
+              bagian "Input Parameter".
+            </div>
+            <div class="step">
+              <strong>Klik OK</strong>
+              EA akan dipasang ke chart. Jika <code>InpShowPanel = true</code>,
+              panel statistik posisi muncul di kiri atas, dan tombol eksekusi
+              muncul di kiri bawah. Watermark <code>EntryAjaib v30.77</code>
+              tampil di chart.
+            </div>
+            <div class="step">
+              <strong>Verifikasi EA aktif</strong>
+              Pastikan ikon EA di pojok kanan atas chart menampilkan wajah
+              tersenyum (smiley). Jika wajah tertawa, berarti Algo Trading
+              nonaktif. Jika wajah sedih, ada error inisialisasi — cek tab
+              <code>Experts</code> dan <code>Journal</code>.
+            </div>
+          </div>
+
+          <h3>D. Konfigurasi Awal yang Direkomendasikan</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Nilai Rekomendasi Awal</th>
+                <th>Alasan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>InpMagicNumber</code></td>
+                <td>angka unik, misalnya <code>20250622</code></td>
+                <td>
+                  Hindari bentrok dengan EA lain. Default <code>0</code> berarti
+                  EA mengelola posisi tanpa filter magic.
+                </td>
+              </tr>
+              <tr>
+                <td><code>InpEntryLot</code></td>
+                <td>0.01 - 0.10 (akun kecil)</td>
+                <td>Mulai dengan lot kecil untuk memahami perilaku EA.</td>
+              </tr>
+              <tr>
+                <td><code>InpLayerCount</code></td>
+                <td>3 - 5</td>
+                <td>Cukup untuk uji multi-layer tanpa exposure berlebihan.</td>
+              </tr>
+              <tr>
+                <td><code>InpMultiStep</code></td>
+                <td>sesuai volatilitas symbol</td>
+                <td>
+                  Gold biasanya butuh grid lebih besar daripada forex majors.
+                </td>
+              </tr>
+              <tr>
+                <td><code>InpSLPoints</code></td>
+                <td>sesuai strategi</td>
+                <td>
+                  Pastikan melebihi
+                  <code>SYMBOL_TRADE_STOPS_LEVEL</code> broker.
+                </td>
+              </tr>
+              <tr>
+                <td><code>InpShowPanel</code></td>
+                <td><code>true</code></td>
+                <td>
+                  Panel statistik membantu monitoring P/L dan margin secara
+                  real-time.
+                </td>
+              </tr>
+              <tr>
+                <td><code>InpCloseOwnOnly</code></td>
+                <td><code>true</code></td>
+                <td>
+                  EA hanya menutup posisi miliknya sendiri, lebih aman jika ada
+                  EA lain.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>E. Pengujian di Strategy Tester</h3>
+          <p>
+            Sebelum pakai di akun real, sangat disarankan menguji EA di Strategy
+            Tester untuk memahami perilaku semua tombol, terutama Plan
+            multi-layer, EX Martingle, Basket TP, dan SL+.
+          </p>
+          <div class="steps">
+            <div class="step">
+              <strong>Buka Strategy Tester</strong>
+              Tekan <kbd>Ctrl + R</kbd> atau klik menu
+              <code>View → Strategy Tester</code>.
+            </div>
+            <div class="step">
+              <strong>Pilih EntryAjaib</strong>
+              Di dropdown <code>Expert</code>, pilih
+              <code>EntryAjaib.ex5</code>.
+            </div>
+            <div class="step">
+              <strong>Set symbol dan periode</strong>
+              Pilih symbol (misalnya XAUUSD), timeframe, dan rentang tanggal
+              uji.
+            </div>
+            <div class="step">
+              <strong>Mode Visual</strong>
+              Centang <code>Visual Mode</code> agar panel EA muncul dan bisa
+              diklik saat backtest berjalan. Atur kecepatan agar sempat mencoba
+              setiap tombol.
+            </div>
+            <div class="step">
+              <strong>Mulai backtest</strong>
+              Klik <code>Start</code>. Saat chart visual muncul, pasang EA jika
+              belum otomatis, lalu uji semua fitur: Buy Now, Plan, EX Normal, EX
+              Martingle, Basket TP, SL+, BEP, TP Partial, Trailing, Close.
+            </div>
+          </div>
+
+          <div class="callout danger">
+            <strong>Peringatan:</strong> fitur
+            <code>EX Martingle</code> menambah lot sangat cepat (1 + 2 + 3 + ...
+            + n). Selalu hitung total lot dengan rumus
+            <code>Lot × Layer × (Layer + 1) / 2</code> sebelum klik execute, dan
+            pastikan margin cukup.
+          </div>
+
+          <h3>F. Checklist Sebelum Trading Live</h3>
+          <ul>
+            <li>
+              File <code>EntryAjaib.ex5</code> sudah ada dan terbaca di
+              Navigator.
+            </li>
+            <li>Algo Trading aktif (tombol hijau di toolbar).</li>
+            <li>
+              EA terpasang di chart symbol yang benar dengan wajah tersenyum.
+            </li>
+            <li>Magic Number unik dan tidak bentrok dengan EA lain.</li>
+            <li>
+              <code>InpCloseOwnOnly = true</code> agar EA hanya kelola posisinya
+              sendiri.
+            </li>
+            <li>Lot awal kecil dan sesuai modal akun.</li>
+            <li>
+              Panel statistik aktif untuk monitoring margin level dan safe lot.
+            </li>
+            <li>Sudah uji semua tombol di demo atau Strategy Tester.</li>
+            <li>
+              Memahami risiko martingale dan multi-layer sebelum pakai EX
+              Martingle.
+            </li>
+          </ul>
+        </section>
+
+        <section id="overview">
+          <h2>1. Gambaran Umum</h2>
+          <p>
+            EntryAjaib EA adalah alat bantu trading berbasis panel. Fungsi
+            utamanya adalah mempercepat eksekusi dan membantu trader mengelola
+            posisi yang sudah terbuka. EA ini bekerja pada symbol chart tempat
+            ia dipasang, misalnya XAUUSD, EURUSD, GBPUSD, atau symbol lain yang
+            didukung broker.
+          </p>
+          <p>
+            EA menggunakan library standar MetaTrader 5
+            <code>Trade\Trade.mqh</code> melalui objek <code>CTrade</code>. Saat
+            inisialisasi, EA mengatur Magic Number, filling mode, parameter lot
+            dari symbol broker, parameter kontrol dari input, mendeteksi akun
+            cent, membuat UI, membuat watermark, dan memperbarui chart.
+          </p>
+
+          <div class="summary-grid">
+            <div class="box">
+              <h3>Fungsi Utama</h3>
+              <ul>
+                <li>Eksekusi Buy/Sell market satu klik.</li>
+                <li>
+                  Plan entry dengan garis entry, SL, TP, dan preview layer.
+                </li>
+                <li>Eksekusi plan normal dan martingale.</li>
+                <li>Basket TP berdasarkan break even weighted average.</li>
+                <li>SL+ untuk stop loss kolektif dan manual profit lock.</li>
+                <li>BEP, partial profit, trailing stop, dan reset SL/TP.</li>
+                <li>Statistik posisi dan monitoring margin.</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h3>Batasan Penting</h3>
+              <ul>
+                <li>EA tidak membaca sinyal otomatis dari indikator.</li>
+                <li>
+                  EA tidak menjamin profit atau menghilangkan risiko market.
+                </li>
+                <li>
+                  Martingale dan multi-layer dapat menaikkan exposure sangat
+                  cepat.
+                </li>
+                <li>
+                  Semua perhitungan point mengikuti symbol dan spesifikasi
+                  broker.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="install">
+          <h2>2. Instalasi dan Persiapan</h2>
+          <div class="steps">
+            <div class="step">
+              <strong>Salin file EA</strong>
+              Letakkan <code>EntryAjaib.mq5</code> ke folder
+              <code>MQL5\Experts</code> pada data folder MetaTrader 5.
+            </div>
+            <div class="step">
+              <strong>Refresh Navigator</strong>
+              Di MetaTrader 5, klik kanan pada Navigator lalu pilih refresh,
+              atau restart terminal.
+            </div>
+            <div class="step">
+              <strong>Pasang EA ke chart</strong>
+              Drag EA ke chart symbol yang ingin dikelola. Pastikan symbol chart
+              sesuai dengan instrumen trading.
+            </div>
+            <div class="step">
+              <strong>Aktifkan Algo Trading</strong>
+              Pastikan tombol Algo Trading aktif dan permission EA mengizinkan
+              trading otomatis.
+            </div>
+            <div class="step">
+              <strong>Atur input awal</strong>
+              Cek Magic Number, lot awal, layer, grid, SL, TP ratio, BEP buffer,
+              dan opsi panel statistik.
+            </div>
+          </div>
+
+          <div class="callout warning">
+            <strong>Rekomendasi:</strong> gunakan akun demo atau strategy tester
+            terlebih dahulu untuk memahami perilaku semua tombol, terutama fitur
+            plan multi-layer, martingale, basket TP, dan SL+.
+          </div>
+        </section>
+
+        <section id="inputs">
+          <h2>3. Input Parameter</h2>
+          <p>
+            Input parameter adalah nilai awal saat EA ditempel ke chart.
+            Beberapa nilai kemudian dapat diubah dari panel chart tanpa membuka
+            pengaturan EA lagi.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Group</th>
+                <th>Parameter</th>
+                <th>Default</th>
+                <th>Fungsi</th>
+                <th>Dipakai oleh</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Magic Number</td>
+                <td><code>InpMagicNumber</code></td>
+                <td><code>0</code></td>
+                <td>
+                  Identitas order dan posisi yang dibuat oleh EA. Default 0
+                  berarti EA tidak memfilter berdasarkan magic saat membuat
+                  order, namun filter magic tetap dipakai pada fitur close,
+                  modify, dan stats.
+                </td>
+                <td>
+                  Entry, close, modify, trailing, stats, basket, pending delete.
+                </td>
+              </tr>
+              <tr>
+                <td>Entry Settings</td>
+                <td><code>InpEntryLot</code></td>
+                <td><code>0.05</code></td>
+                <td>
+                  Lot awal yang menjadi <code>CurrentLot</code> saat EA aktif.
+                </td>
+                <td>Buy Now, Sell Now, Plan, martingale, grid internal.</td>
+              </tr>
+              <tr>
+                <td>Entry Settings</td>
+                <td><code>InpLayerCount</code></td>
+                <td><code>5</code></td>
+                <td>Jumlah layer awal.</td>
+                <td>Plan shadow line, EX Normal, EX Martingle.</td>
+              </tr>
+              <tr>
+                <td>Entry Settings</td>
+                <td><code>InpMultiStep</code></td>
+                <td><code>2500</code></td>
+                <td>Jarak antar layer dalam point.</td>
+                <td>Plan layer, grid internal, martingale internal.</td>
+              </tr>
+              <tr>
+                <td>Risk Reward</td>
+                <td><code>InpSLTPEnabled</code></td>
+                <td><code>true</code></td>
+                <td>
+                  Status awal toggle <code>SL/TP ON</code> / <code>SL/TP OFF</code>.
+                  Jika <code>false</code>, order baru dikirim tanpa SL dan TP.
+                  <span class="badge blue">baru di 30.75</span>
+                </td>
+                <td>Buy Now, Sell Now, EX Normal, EX Martingle.</td>
+              </tr>
+              <tr>
+                <td>Risk Reward</td>
+                <td><code>InpSLPoints</code></td>
+                <td><code>20000</code></td>
+                <td>Jarak Stop Loss dalam point.</td>
+                <td>Manual entry, plan, Set SL, Set TP, Basket TP default.</td>
+              </tr>
+              <tr>
+                <td>Risk Reward</td>
+                <td><code>InpRewardRatio</code></td>
+                <td><code>2.0</code></td>
+                <td>Rasio reward terhadap risk.</td>
+                <td>TP calculation, Plan Info, Set TP.</td>
+              </tr>
+              <tr>
+                <td>Risk Reward</td>
+                <td><code>InpBEPProfitPoints</code></td>
+                <td><code>1000</code></td>
+                <td>
+                  Buffer profit kecil saat tombol BEP ditekan. Nilai ini juga
+                  bisa diubah dari panel BEP.
+                </td>
+                <td>BEP.</td>
+              </tr>
+              <tr>
+                <td>Close Settings</td>
+                <td><code>InpCloseOwnOnly</code></td>
+                <td><code>true</code></td>
+                <td>
+                  Jika aktif, hanya posisi dengan Magic Number EA yang diproses
+                  pada fitur tertentu.
+                </td>
+                <td>Close, BEP, Basket TP, SL+, perhitungan BEP basket.</td>
+              </tr>
+              <tr>
+                <td>Trailing Stop</td>
+                <td><code>InpTrailingStep</code></td>
+                <td><code>500</code></td>
+                <td>Jarak trailing stop awal dalam point.</td>
+                <td>Trailing Stop.</td>
+              </tr>
+              <tr>
+                <td>Margin Safety</td>
+                <td><code>InpMaxMarginUsage</code></td>
+                <td><code>20.0</code></td>
+                <td>Batas penggunaan margin untuk menghitung Safe Lot.</td>
+                <td>Position Stats Panel.</td>
+              </tr>
+              <tr>
+                <td>Margin Safety</td>
+                <td><code>InpMinMarginLevel</code></td>
+                <td><code>150.0</code></td>
+                <td>Batas margin level minimum untuk warna warning.</td>
+                <td>Position Stats Panel.</td>
+              </tr>
+              <tr>
+                <td>Notification Settings</td>
+                <td><code>InpPushNotifPending</code></td>
+                <td><code>true</code></td>
+                <td>
+                  Kirim push notification ke MT5 Mobile setiap Pending Order
+                  milik EA tereksekusi menjadi posisi.
+                  <span class="badge blue">baru di 30.75</span>
+                </td>
+                <td>Push Notification (lihat bagian 22).</td>
+              </tr>
+              <tr>
+                <td>Appearance</td>
+                <td><code>InpShowPanel</code></td>
+                <td><code>true</code></td>
+                <td>
+                  Menentukan apakah panel statistik posisi kiri atas dibuat saat
+                  init.
+                </td>
+                <td>Position Stats Panel.</td>
+              </tr>
+              <tr>
+                <td>Appearance</td>
+                <td><code>TextColor</code></td>
+                <td><code>clrWhite</code></td>
+                <td>Warna teks tombol utama.</td>
+                <td>Button UI.</td>
+              </tr>
+              <tr>
+                <td>UI Scaling</td>
+                <td><code>InpUIScale</code></td>
+                <td><code>0</code></td>
+                <td>
+                  Faktor skala pixel seluruh panel. <code>0</code> = otomatis
+                  dari DPI layar. Isi manual (mis. <code>1.5</code>) bila panel
+                  terasa terlalu kecil atau terlalu besar.
+                  <span class="badge blue">baru di 30.76</span>
+                </td>
+                <td>Semua panel, tombol, dan label UI.</td>
+              </tr>
+              <tr>
+                <td>UI Scaling</td>
+                <td><code>InpUIFontDelta</code></td>
+                <td><code>0</code></td>
+                <td>
+                  Penyesuaian ukuran font <code>-6</code> sampai <code>+6</code>.
+                  Kecilkan bila teks tombol terpotong.
+                  <span class="badge blue">baru di 30.76</span>
+                </td>
+                <td>Semua teks UI.</td>
+              </tr>
+              <tr>
+                <td>UI Scaling</td>
+                <td><code>InpUIAutoFit</code></td>
+                <td><code>true</code></td>
+                <td>
+                  Mengecilkan panel secara otomatis agar tetap muat di chart
+                  yang sempit.
+                  <span class="badge blue">baru di 30.76</span>
+                </td>
+                <td>Layout panel tombol dan control panel.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="ui">
+          <h2>4. Struktur Panel UI</h2>
+          <p>
+            UI dibuat sebagai objek chart MetaTrader 5. Tombol utama berada di
+            area kiri bawah. Watermark
+            <code>EntryAjaib v30.77</code> juga dibuat di chart.
+          </p>
+
+          <div class="button-map">
+            <div class="button-tile">
+              <strong><span class="badge green">BUY NOW</span></strong>
+              <p>Buka market Buy satu posisi.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge red">SELL NOW</span></strong>
+              <p>Buka market Sell satu posisi.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge green">PLAN BUY</span></strong>
+              <p>Buat garis rencana Buy.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge red">PLAN SELL</span></strong>
+              <p>Buat garis rencana Sell.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge green">BASKET BUY</span></strong>
+              <p>Buat garis TP basket untuk posisi Buy.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge red">BASKET SELL</span></strong>
+              <p>Buat garis TP basket untuk posisi Sell.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge blue">Set SL</span></strong>
+              <p>Pasang ulang SL posisi milik EA.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge blue">Set TP</span></strong>
+              <p>Pasang ulang TP posisi milik EA.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge gray">Reset SL/TP</span></strong>
+              <p>Hapus SL dan TP posisi milik EA.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge purple">SL+</span></strong>
+              <p>Buat Basket SL dan panel execute SL.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge orange">TRAIL</span></strong>
+              <p>Toggle trailing stop ON/OFF.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge blue">SL/TP</span></strong>
+              <p>Toggle order baru pakai SL/TP atau tidak.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge orange">BEP</span></strong>
+              <p>Pindahkan SL ke entry plus buffer.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge teal">TP½</span></strong>
+              <p>Partial close posisi profit sesuai persen panel.</p>
+            </div>
+            <div class="button-tile">
+              <strong><span class="badge red">CLOSE ALL</span></strong>
+              <p>Tutup semua posisi sesuai filter.</p>
+            </div>
+          </div>
+
+          <div class="callout">
+            <strong>Objek chart:</strong> UI ini dibuat dari
+            <code>OBJ_BUTTON</code>, <code>OBJ_EDIT</code>,
+            <code>OBJ_LABEL</code>, <code>OBJ_HLINE</code>, dan
+            <code>OBJ_TEXT</code>. Karena berbasis objek chart, garis plan,
+            basket, dan SL+ dapat digeser langsung di chart.
+          </div>
+        </section>
+
+        <section id="controls">
+          <h2>5. Kontrol LOT, GRID, SL, TP, LYR, TRAIL</h2>
+          <p>
+            Kontrol panel dibuat agar parameter eksekusi bisa diubah langsung
+            dari chart. Setiap kontrol memiliki tombol minus, kotak input, dan
+            tombol plus. Setelah angka diubah, EA memperbarui display dan
+            beberapa fitur aktif seperti Plan Info.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Kontrol</th>
+                <th>Nilai Awal</th>
+                <th>Range Internal</th>
+                <th>Step Tombol</th>
+                <th>Dampak</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>LOT</code></td>
+                <td><code>InpEntryLot</code></td>
+                <td>Min/Max volume broker</td>
+                <td>Volume step broker</td>
+                <td>Lot order baru, plan normal, dasar martingale.</td>
+              </tr>
+              <tr>
+                <td><code>GRID</code></td>
+                <td><code>InpMultiStep</code></td>
+                <td>50 - 10000 points</td>
+                <td>50 points</td>
+                <td>Jarak antar layer plan dan order multi-layer.</td>
+              </tr>
+              <tr>
+                <td><code>SL</code></td>
+                <td><code>InpSLPoints</code></td>
+                <td>100 - 250000 points</td>
+                <td>500 points</td>
+                <td>Jarak stop loss dan dasar perhitungan TP.</td>
+              </tr>
+              <tr>
+                <td><code>TP 1</code></td>
+                <td><code>InpRewardRatio</code></td>
+                <td>0.5 - 50.0</td>
+                <td>0.5</td>
+                <td>Rasio TP terhadap SL.</td>
+              </tr>
+              <tr>
+                <td><code>LYR</code></td>
+                <td><code>InpLayerCount</code></td>
+                <td>1 - 50 layer</td>
+                <td>1 layer</td>
+                <td>Jumlah layer plan dan eksekusi multi-layer.</td>
+              </tr>
+              <tr>
+                <td><code>TRAIL</code></td>
+                <td><code>InpTrailingStep</code></td>
+                <td>50 - 10000 points</td>
+                <td>50 points</td>
+                <td>Jarak trailing stop saat TRAIL ON.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Cara Menggunakan Kontrol</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Klik tombol plus atau minus</strong>
+              Gunakan plus/minus untuk menambah atau mengurangi nilai sesuai
+              step masing-masing kontrol.
+            </div>
+            <div class="step">
+              <strong>Ketik angka langsung</strong>
+              Klik kotak input, masukkan angka baru, lalu akhiri edit. EA akan
+              validasi range.
+            </div>
+            <div class="step">
+              <strong>Periksa perubahan plan</strong>
+              Jika Plan aktif, perubahan LOT, GRID, SL, TP, atau LYR akan
+              memperbarui garis dan panel info.
+            </div>
+          </div>
+        </section>
+
+        <section id="manual-entry">
+          <h2>6. Buy Now dan Sell Now</h2>
+          <p>
+            Tombol <code>BUY NOW</code> dan <code>SELL NOW</code> membuka satu
+            posisi market. Keduanya menggunakan <code>CurrentLot</code> dari
+            panel.
+          </p>
+
+          <h3>BUY NOW</h3>
+          <ul>
+            <li>Mengambil harga <code>ASK</code> sebagai harga open.</li>
+            <li>
+              Jika <code>SL/TP ON</code>, SL dipasang di bawah harga open sejauh
+              <code>CurrentSL</code>.
+            </li>
+            <li>
+              Jika <code>SL/TP ON</code>, TP dipasang di atas harga open sejauh
+              <code>CurrentSL x CurrentTPRatio</code>.
+            </li>
+            <li>Jika <code>SL/TP OFF</code>, order dibuka tanpa SL dan TP.</li>
+          </ul>
+
+          <h3>SELL NOW</h3>
+          <ul>
+            <li>Mengambil harga <code>BID</code> sebagai harga open.</li>
+            <li>
+              Jika <code>SL/TP ON</code>, SL dipasang di atas harga open sejauh
+              <code>CurrentSL</code>.
+            </li>
+            <li>
+              Jika <code>SL/TP ON</code>, TP dipasang di bawah harga open sejauh
+              <code>CurrentSL x CurrentTPRatio</code>.
+            </li>
+            <li>Jika <code>SL/TP OFF</code>, order dibuka tanpa SL dan TP.</li>
+          </ul>
+
+          <div class="callout warning">
+            <strong>Perhatian:</strong> Buy Now dan Sell Now adalah market order
+            langsung. Tombol ini mengirim order ke broker begitu diklik, jadi
+            pastikan lot, SL/TP toggle, dan chart symbol sudah benar.
+          </div>
+        </section>
+
+        <section id="sltp">
+          <h2>7. SL/TP ON/OFF, Set SL, Set TP, Reset SL/TP</h2>
+
+          <h3>SL/TP ON dan SL/TP OFF</h3>
+          <p>
+            Toggle ini menentukan apakah order baru dari EA membawa SL dan TP
+            otomatis. Sejak versi <code>30.75</code>, status awalnya diambil
+            dari input parameter <code>InpSLTPEnabled</code> (default
+            <code>true</code>), sehingga tombol tampil sebagai
+            <code>SL/TP ON</code> saat EA dipasang.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Efek pada order baru</th>
+                <th>Kapan digunakan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge blue">SL/TP ON</span></td>
+                <td>EA menghitung dan memasang SL/TP saat order dibuat.</td>
+                <td>Trading normal dengan proteksi langsung.</td>
+              </tr>
+              <tr>
+                <td><span class="badge gray">SL/TP OFF</span></td>
+                <td>EA mengirim order tanpa SL dan TP.</td>
+                <td>
+                  Jika trader ingin mengatur SL/TP secara basket atau manual
+                  setelah entry.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Set SL</h3>
+          <p>
+            Tombol <code>Set SL</code> memasang ulang Stop Loss pada semua
+            posisi symbol aktif dengan Magic Number EA. Untuk Buy, SL dihitung
+            dari harga open dikurangi <code>CurrentSL</code>. Untuk Sell, SL
+            dihitung dari harga open ditambah <code>CurrentSL</code>.
+          </p>
+
+          <h3>Set TP</h3>
+          <p>
+            Tombol <code>Set TP</code> memasang ulang Take Profit pada semua
+            posisi symbol aktif dengan Magic Number EA. Jarak TP dihitung dari
+            <code>CurrentSL x CurrentTPRatio</code>.
+          </p>
+
+          <h3>Reset SL/TP</h3>
+          <p>
+            Tombol <code>Reset SL/TP</code> mengubah SL dan TP posisi menjadi
+            nol. Artinya posisi tidak lagi memiliki stop loss dan take profit.
+          </p>
+
+          <div class="callout danger">
+            <strong>Risiko:</strong> reset SL/TP dapat menghilangkan proteksi
+            posisi. Gunakan hanya jika memang ingin mengganti metode exit,
+            misalnya dengan Basket TP atau SL+.
+          </div>
+        </section>
+
+        <section id="close">
+          <h2>8. Close dan Delete Pending</h2>
+          <p>
+            Tombol close digunakan untuk menutup posisi pada symbol aktif. Jika
+            <code>InpCloseOwnOnly</code> aktif, EA hanya menutup posisi dengan
+            Magic Number yang sama.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Tombol</th>
+                <th>Fungsi</th>
+                <th>Filter</th>
+                <th>Catatan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>Close All Buy</code></td>
+                <td>Menutup semua posisi Buy.</td>
+                <td>Symbol aktif dan filter Magic Number jika aktif.</td>
+                <td>Memiliki retry sampai 10 kali.</td>
+              </tr>
+              <tr>
+                <td><code>Close All Sell</code></td>
+                <td>Menutup semua posisi Sell.</td>
+                <td>Symbol aktif dan filter Magic Number jika aktif.</td>
+                <td>Memiliki retry sampai 10 kali.</td>
+              </tr>
+              <tr>
+                <td><code>CLOSE ALL</code></td>
+                <td>Menutup semua posisi Buy dan Sell.</td>
+                <td>Symbol aktif dan filter Magic Number jika aktif.</td>
+                <td>Digunakan untuk keluar cepat.</td>
+              </tr>
+              <tr>
+                <td><code>DelPend</code></td>
+                <td>Menghapus pending order.</td>
+                <td>Symbol aktif dan Magic Number EA.</td>
+                <td>Tidak menutup posisi market.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout">
+            <strong>Catatan:</strong> fitur close profit/loss tidak tersedia
+            sebagai tombol aktif pada UI versi <code>30.77</code>. Tombol close
+            yang aktif adalah Close Buy, Close Sell, dan Close All.
+          </div>
+        </section>
+
+        <section id="plan">
+          <h2>9. Plan Buy dan Plan Sell</h2>
+          <p>
+            Plan adalah fitur untuk merencanakan entry sebelum order benar-benar
+            dikirim ke broker. Dengan plan, trader bisa melihat level entry, SL,
+            TP, estimasi profit/loss, rasio risk reward, dan posisi layer.
+          </p>
+
+          <h3>Objek yang Dibuat Saat Plan Aktif</h3>
+          <ul>
+            <li>
+              <code>Plan_Line_Entry</code>: garis entry yang bisa digeser.
+            </li>
+            <li><code>Plan_Line_SL</code>: garis Stop Loss.</li>
+            <li><code>Plan_Line_TP</code>: garis Take Profit.</li>
+            <li>
+              <code>Plan_Shadow_*</code>: garis dotted untuk preview layer
+              tambahan.
+            </li>
+            <li>Panel Plan Info di kanan bawah.</li>
+            <li>
+              Tombol <code>EX Normal</code> dan <code>EX Martingle</code>.
+            </li>
+          </ul>
+
+          <h3>Plan Buy</h3>
+          <p>
+            Saat <code>PLAN BUY</code> diklik, EA membuat entry di tengah area
+            harga chart yang terlihat. SL berada di bawah entry, TP berada di
+            atas entry, dan shadow layer berikutnya berada di bawah entry dengan
+            jarak <code>GRID</code>.
+          </p>
+
+          <h3>Plan Sell</h3>
+          <p>
+            Saat <code>PLAN SELL</code> diklik, EA membuat entry di tengah area
+            harga chart yang terlihat. SL berada di atas entry, TP berada di
+            bawah entry, dan shadow layer berikutnya berada di atas entry dengan
+            jarak <code>GRID</code>.
+          </p>
+
+          <h3>Cara Menggunakan Plan</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Klik PLAN BUY atau PLAN SELL</strong>
+              Pilih arah rencana berdasarkan analisis trading.
+            </div>
+            <div class="step">
+              <strong>Geser garis entry</strong>
+              Drag garis entry ke level harga yang diinginkan. Garis SL, TP, dan
+              seluruh shadow layer ikut bergerak <strong>real-time</strong>
+              selama garis masih ditarik (perbaikan versi <code>30.77</code>;
+              sebelumnya baru menyusul setelah tombol mouse dilepas).
+            </div>
+            <div class="step">
+              <strong>Atur LOT, GRID, SL, TP, dan LYR</strong>
+              Perubahan parameter akan memperbarui garis, shadow line, dan panel
+              Plan Info.
+            </div>
+            <div class="step">
+              <strong>Baca panel Plan Info</strong>
+              Periksa tipe, lot x layer, entry, SL, TP, estimasi risk, estimasi
+              profit, R:R, dan jarak point.
+            </div>
+            <div class="step">
+              <strong>Eksekusi atau batalkan</strong>
+              Klik <code>EX Normal</code> atau <code>EX Martingle</code> untuk
+              eksekusi. Klik tombol plan yang sama lagi untuk menghapus plan.
+            </div>
+          </div>
+
+          <h3>Isi Panel Plan Info</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Label</th>
+                <th>Penjelasan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Type</td>
+                <td>
+                  Arah plan, Buy atau Sell, serta informasi lot dan jumlah
+                  layer.
+                </td>
+              </tr>
+              <tr>
+                <td>Entry</td>
+                <td>Harga entry utama dari garis plan.</td>
+              </tr>
+              <tr>
+                <td>SL</td>
+                <td>Harga stop loss dari plan.</td>
+              </tr>
+              <tr>
+                <td>TP</td>
+                <td>Harga take profit dari plan.</td>
+              </tr>
+              <tr>
+                <td>Risk</td>
+                <td>Estimasi kerugian total jika semua layer terkena SL.</td>
+              </tr>
+              <tr>
+                <td>Profit</td>
+                <td>Estimasi profit total jika semua layer mencapai TP.</td>
+              </tr>
+              <tr>
+                <td>R:R</td>
+                <td>Rasio profit terhadap risk berdasarkan simulasi layer.</td>
+              </tr>
+              <tr>
+                <td>SL/TP points</td>
+                <td>Jarak SL dan TP dari entry utama dalam point.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="execute-plan">
+          <h2>10. EX Normal dan EX Martingle</h2>
+          <p>
+            Tombol execute hanya muncul ketika plan aktif. Setelah execute
+            selesai, EA menghapus garis plan dari chart.
+          </p>
+
+          <h3>EX Normal</h3>
+          <p>
+            <code>EX Normal</code> mengeksekusi plan multi-layer dengan lot
+            tetap. Setiap layer menggunakan <code>CurrentLot</code>.
+          </p>
+          <pre><code>Contoh:
+LOT = 0.50
+LYR = 5
+
+Layer 1 = 0.50 lot
+Layer 2 = 0.50 lot
+Layer 3 = 0.50 lot
+Layer 4 = 0.50 lot
+Layer 5 = 0.50 lot
+Total   = 2.50 lot</code></pre>
+
+          <h4>Cara kerja order pada EX Normal</h4>
+          <ul>
+            <li>Layer pertama memakai harga entry utama dari garis plan.</li>
+            <li>Layer berikutnya dihitung dengan jarak <code>GRID</code>.</li>
+            <li>Plan Buy menempatkan layer lebih rendah dari entry utama.</li>
+            <li>Plan Sell menempatkan layer lebih tinggi dari entry utama.</li>
+            <li>
+              Jika harga layer valid sebagai pending order, EA memilih Buy
+              Limit, Buy Stop, Sell Limit, atau Sell Stop.
+            </li>
+            <li>
+              Jika harga terlalu dekat dengan market, EA membuka market order.
+            </li>
+            <li>Jika <code>SL/TP OFF</code>, SL dan TP dikirim sebagai nol.</li>
+          </ul>
+
+          <h3>EX Martingle</h3>
+          <p>
+            <code>EX Martingle</code> mengeksekusi plan multi-layer dengan lot
+            bertambah linear. Layer ke-1 memakai lot dasar, layer ke-2 memakai
+            lot dasar dikali 2, layer ke-3 dikali 3, dan seterusnya.
+          </p>
+          <pre><code>Contoh:
+LOT = 0.50
+LYR = 5
+
+Layer 1 = 0.50 lot
+Layer 2 = 1.00 lot
+Layer 3 = 1.50 lot
+Layer 4 = 2.00 lot
+Layer 5 = 2.50 lot
+Total   = 7.50 lot
+
+Formula:
+Total Lot = Lot Dasar x (Layer x (Layer + 1) / 2)</code></pre>
+
+          <div class="callout danger">
+            <strong>Risiko martingale:</strong> total lot meningkat cepat.
+            Sebelum klik <code>EX Martingle</code>, periksa total lot, free
+            margin, safe lot, margin level, garis MC, dan garis Liquidation
+            Stop.
+          </div>
+        </section>
+
+        <section id="basket-tp">
+          <h2>11. Basket TP</h2>
+          <p>
+            Basket TP digunakan untuk memasang Take Profit kolektif pada banyak
+            posisi sejenis. Fitur ini menghitung break even berdasarkan weighted
+            average dari harga open dan lot.
+          </p>
+
+          <h3>Formula BEP Basket</h3>
+          <pre><code>BEP = jumlah(lot x harga open) / jumlah(lot)</code></pre>
+          <p>
+            Karena memakai bobot lot, posisi dengan lot lebih besar lebih
+            berpengaruh terhadap harga BEP.
+          </p>
+
+          <h3>Basket Buy</h3>
+          <p>
+            Tombol <code>BASKET BUY</code> mencari semua posisi Buy pada symbol
+            aktif sesuai filter Magic Number. Jika ada posisi Buy, EA membuat
+            garis BEP dan garis TP yang bisa digeser.
+          </p>
+
+          <h3>Basket Sell</h3>
+          <p>
+            Tombol <code>BASKET SELL</code> mencari semua posisi Sell pada
+            symbol aktif sesuai filter Magic Number. Jika ada posisi Sell, EA
+            membuat garis BEP dan garis TP yang bisa digeser.
+          </p>
+
+          <h3>Panel Basket TP</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Informasi</th>
+                <th>Arti</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Type</td>
+                <td>Arah basket, Buy atau Sell, dan jumlah posisi.</td>
+              </tr>
+              <tr>
+                <td>BEP</td>
+                <td>Harga break even basket.</td>
+              </tr>
+              <tr>
+                <td>TP</td>
+                <td>Harga target take profit dari garis TP.</td>
+              </tr>
+              <tr>
+                <td>Total Lots</td>
+                <td>Total lot semua posisi dalam basket.</td>
+              </tr>
+              <tr>
+                <td>Distance</td>
+                <td>Jarak dari BEP ke TP dalam point.</td>
+              </tr>
+              <tr>
+                <td>Est. Profit</td>
+                <td>Estimasi profit jika seluruh basket mencapai TP.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Cara Menggunakan Basket TP</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Pastikan ada posisi aktif</strong>
+              Minimal harus ada satu posisi Buy untuk Basket Buy, atau satu
+              posisi Sell untuk Basket Sell.
+            </div>
+            <div class="step">
+              <strong>Klik BASKET BUY atau BASKET SELL</strong>
+              EA membuat garis BEP dan garis TP.
+            </div>
+            <div class="step">
+              <strong>Geser garis TP</strong>
+              Tempatkan garis pada level target. Panel akan menghitung ulang
+              estimasi profit.
+            </div>
+            <div class="step">
+              <strong>Validasi arah TP</strong>
+              Untuk Buy, TP harus di atas BEP. Untuk Sell, TP harus di bawah
+              BEP.
+            </div>
+            <div class="step">
+              <strong>Klik execute pada panel</strong>
+              EA memasang TP yang sama ke seluruh posisi sesuai tipe basket.
+            </div>
+          </div>
+        </section>
+
+        <section id="slplus">
+          <h2>12. SL+ / Basket SL</h2>
+          <p>
+            SL+ adalah fitur Basket SL. Fitur ini membuat garis Stop Loss
+            kolektif berdasarkan BEP posisi. Garis SL+ bisa digunakan untuk
+            membatasi kerugian atau mengunci profit manual jika garis diletakkan
+            melewati BEP.
+          </p>
+
+          <h3>Cara EA Memilih Tipe Awal</h3>
+          <ul>
+            <li>Jika hanya ada posisi Buy, SL+ dibuat untuk Buy.</li>
+            <li>Jika hanya ada posisi Sell, SL+ dibuat untuk Sell.</li>
+            <li>
+              Jika ada Buy dan Sell, EA memilih sisi dengan jumlah posisi lebih
+              banyak.
+            </li>
+          </ul>
+
+          <h3>Objek yang Dibuat</h3>
+          <ul>
+            <li>Garis BEP Buy atau Sell.</li>
+            <li>Garis SL+ yang bisa digeser.</li>
+            <li>Panel info SL+.</li>
+            <li>Tombol <code>Ex SL Buy</code>.</li>
+            <li>Tombol <code>Ex SL Sell</code>.</li>
+          </ul>
+
+          <h3>Isi Panel SL+</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Informasi</th>
+                <th>Arti</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BUY info</td>
+                <td>Jumlah posisi Buy, total lot Buy, dan BEP Buy.</td>
+              </tr>
+              <tr>
+                <td>SELL info</td>
+                <td>Jumlah posisi Sell, total lot Sell, dan BEP Sell.</td>
+              </tr>
+              <tr>
+                <td>Selected</td>
+                <td>Tipe basket yang sedang dihitung.</td>
+              </tr>
+              <tr>
+                <td>BEP</td>
+                <td>Break even tipe terpilih.</td>
+              </tr>
+              <tr>
+                <td>SL</td>
+                <td>Harga SL dari garis SL+.</td>
+              </tr>
+              <tr>
+                <td>Distance</td>
+                <td>Jarak dari BEP ke SL dalam point.</td>
+              </tr>
+              <tr>
+                <td>Est. Loss/Profit</td>
+                <td>
+                  Estimasi loss jika SL di sisi rugi, atau profit jika SL
+                  melewati BEP.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Cara Menggunakan SL+</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Klik tombol SL+</strong>
+              EA membuat garis BEP dan garis SL+ jika ada posisi aktif.
+            </div>
+            <div class="step">
+              <strong>Geser garis SL+</strong>
+              Tempatkan garis pada level stop loss atau level profit lock.
+            </div>
+            <div class="step">
+              <strong>Baca estimasi panel</strong>
+              Pastikan estimasi loss/profit sesuai rencana.
+            </div>
+            <div class="step">
+              <strong>Klik Ex SL Buy atau Ex SL Sell</strong>
+              Pilih sisi posisi yang ingin dipasang SL kolektif.
+            </div>
+          </div>
+
+          <div class="callout">
+            <strong>Catatan UI v30.77:</strong> kode memiliki panel kontrol SL+
+            dengan variabel <code>CurrentSLPlus</code>,
+            <code>MinSLPlus</code> (<code>100</code>), dan
+            <code>MaxSLPlus</code> (<code>50000</code>) dengan step
+            <code>500</code> points. Tombol plus/minus dan kotak input SL+
+            terhubung ke handler <code>AdjustSLPlus()</code> dan
+            <code>UpdateSLPlusDisplay()</code>. Saat garis SL+ aktif, mengubah
+            nilai SL+ via panel akan otomatis menggeser garis SL+ dari BEP
+            sesuai tipe basket. Penggunaan utama tetap melalui tombol
+            <code>SL+</code>, garis yang dapat digeser, dan tombol execute pada
+            panel SL+.
+          </div>
+        </section>
+
+        <section id="bep">
+          <h2>13. BEP</h2>
+          <p>
+            Tombol <code>BEP</code> memindahkan Stop Loss posisi ke area break
+            even plus buffer kecil. Buffer diambil dari input
+            <code>InpBEPProfitPoints</code> (default <code>1000</code> points)
+            dan dapat diubah langsung dari panel BEP di chart tanpa membuka
+            pengaturan EA.
+          </p>
+
+          <h3>Panel Kontrol BEP</h3>
+          <p>
+            EA membuat panel kontrol BEP dengan tombol minus, kotak input, dan
+            tombol plus. Nilai buffer dapat diatur dalam range
+            <code>0 - 50000</code> points dengan step <code>100</code> points.
+            Perubahan nilai buffer langsung dipakai saat tombol
+            <code>BEP</code> diklik.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Tipe Posisi</th>
+                <th>Rumus SL Baru</th>
+                <th>Syarat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Buy</td>
+                <td><code>Open Price + Buffer</code></td>
+                <td>
+                  Harga Bid harus cukup jauh di atas SL baru dan melewati batas
+                  broker.
+                </td>
+              </tr>
+              <tr>
+                <td>Sell</td>
+                <td><code>Open Price - Buffer</code></td>
+                <td>
+                  Harga Ask harus cukup jauh di bawah SL baru dan melewati batas
+                  broker.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Cara Menggunakan BEP</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Atur buffer BEP</strong>
+              Gunakan tombol plus/minus pada panel BEP atau ketik angka langsung
+              di kotak input untuk mengatur jarak buffer (dalam points).
+            </div>
+            <div class="step">
+              <strong>Tunggu posisi bergerak profit</strong>
+              BEP memerlukan jarak harga yang cukup agar broker menerima
+              perubahan SL.
+            </div>
+            <div class="step">
+              <strong>Klik tombol BEP</strong>
+              EA memproses posisi Buy dan Sell pada symbol aktif sesuai filter.
+            </div>
+            <div class="step">
+              <strong>Cek posisi yang berhasil dimodifikasi</strong>
+              Posisi yang belum memenuhi jarak minimum akan dilewati.
+            </div>
+          </div>
+
+          <div class="callout">
+            <strong>Validasi broker:</strong> EA memperhitungkan
+            <code>SYMBOL_TRADE_STOPS_LEVEL</code> dan
+            <code>SYMBOL_TRADE_FREEZE_LEVEL</code>. Jika posisi terlalu dekat
+            dengan harga market, SL tidak dipindahkan.
+          </div>
+        </section>
+
+        <section id="partial">
+          <h2>14. TP Partial</h2>
+          <p>
+            Tombol <code>TP½</code> menjalankan partial close untuk posisi yang
+            sedang profit. Pada versi <code>30.77</code>, persentase volume yang
+            ditutup dapat diatur dari panel TP Partial, dengan range
+            <code>10% - 90%</code> dan step <code>5%</code>. Default adalah
+            <code>50%</code> (setengah volume).
+          </p>
+
+          <h3>Panel Kontrol TP Partial</h3>
+          <p>
+            EA membuat panel kontrol TP Partial dengan tombol minus, kotak input
+            persen, dan tombol plus. Nilai persen dipakai saat tombol
+            <code>TP½</code> diklik. Volume partial dihitung sebagai
+            <code>Volume × Persen / 100</code>, lalu dibulatkan ke bawah ke
+            kelipatan <code>SYMBOL_VOLUME_STEP</code>.
+          </p>
+
+          <h3>Syarat Posisi Diproses</h3>
+          <ul>
+            <li>Symbol sama dengan chart aktif.</li>
+            <li>Magic Number sama dengan <code>InpMagicNumber</code>.</li>
+            <li>Total profit posisi setelah swap lebih besar dari nol.</li>
+            <li>Volume posisi lebih besar dari minimum lot broker.</li>
+            <li>
+              Sisa volume setelah partial close masih memenuhi minimum lot
+              broker.
+            </li>
+          </ul>
+
+          <h3>Contoh</h3>
+          <pre><code>Volume posisi = 0.10 lot
+Persen TP Partial = 50%
+Minimum lot broker = 0.01
+
+TP Partial menutup 0.05 lot
+Sisa posisi menjadi 0.05 lot</code></pre>
+
+          <pre><code>Volume posisi = 0.30 lot
+Persen TP Partial = 30%
+Lot step broker = 0.01
+
+Volume partial = 0.30 x 30 / 100 = 0.09 lot
+Sisa posisi menjadi 0.21 lot</code></pre>
+
+          <div class="callout warning">
+            <strong>Catatan:</strong> jika volume terlalu kecil atau sisa lot
+            setelah partial kurang dari minimum lot broker, EA akan melewati
+            posisi tersebut agar tidak melanggar minimum volume broker.
+          </div>
+        </section>
+
+        <section id="trailing">
+          <h2>15. Trailing Stop</h2>
+          <p>
+            Trailing Stop berjalan pada <code>OnTick</code> hanya jika tombol
+            <code>TRAIL ON</code> aktif. EA memproses posisi pada symbol aktif
+            dengan Magic Number EA.
+          </p>
+
+          <h3>Buy Trailing</h3>
+          <ul>
+            <li>
+              Trailing aktif jika
+              <code>Bid &gt;= Open Price + Trail Distance</code>.
+            </li>
+            <li>SL baru dihitung sebagai <code>Bid - Trail Distance</code>.</li>
+            <li>SL hanya digeser jika SL baru lebih tinggi dari SL lama.</li>
+          </ul>
+
+          <h3>Sell Trailing</h3>
+          <ul>
+            <li>
+              Trailing aktif jika
+              <code>Ask &lt;= Open Price - Trail Distance</code>.
+            </li>
+            <li>SL baru dihitung sebagai <code>Ask + Trail Distance</code>.</li>
+            <li>
+              SL hanya digeser jika SL baru lebih rendah dari SL lama, atau jika
+              posisi belum punya SL.
+            </li>
+          </ul>
+
+          <h3>Cara Menggunakan Trailing</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Atur nilai TRAIL</strong>
+              Gunakan plus/minus atau ketik jarak trailing dalam point.
+            </div>
+            <div class="step">
+              <strong>Klik TRAIL OFF menjadi TRAIL ON</strong>
+              Warna tombol berubah dan trailing mulai diproses setiap tick.
+            </div>
+            <div class="step">
+              <strong>Monitor SL</strong>
+              SL akan bergerak hanya saat posisi sudah profit minimal sejauh
+              trail distance.
+            </div>
+          </div>
+        </section>
+
+        <section id="stats">
+          <h2>16. Panel Statistik Posisi</h2>
+          <p>
+            Panel statistik dibuat jika <code>InpShowPanel</code> bernilai
+            <code>true</code> saat EA diinisialisasi. Setelah dibuat, panel
+            diperbarui setiap tick oleh <code>UpdatePositionStatsPanel()</code>.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Label Panel</th>
+                <th>Penjelasan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>P/L</td>
+                <td>
+                  Total floating profit/loss posisi EA pada symbol aktif,
+                  termasuk swap, dengan persentase terhadap balance.
+                </td>
+              </tr>
+              <tr>
+                <td>Pips</td>
+                <td>
+                  Konversi total points menjadi pips berdasarkan jenis symbol.
+                </td>
+              </tr>
+              <tr>
+                <td>Points</td>
+                <td>
+                  Total points mentah dari seluruh posisi EA pada symbol aktif.
+                </td>
+              </tr>
+              <tr>
+                <td>BUY layers</td>
+                <td>Jumlah posisi Buy.</td>
+              </tr>
+              <tr>
+                <td>BUY lot</td>
+                <td>Total lot posisi Buy.</td>
+              </tr>
+              <tr>
+                <td>SELL layers</td>
+                <td>Jumlah posisi Sell.</td>
+              </tr>
+              <tr>
+                <td>SELL lot</td>
+                <td>Total lot posisi Sell.</td>
+              </tr>
+              <tr>
+                <td>Margin Level</td>
+                <td>
+                  Equity dibagi used margin, ditampilkan sebagai persentase.
+                </td>
+              </tr>
+              <tr>
+                <td>Used</td>
+                <td>
+                  Total lot yang sedang digunakan dan estimasi margin usage.
+                </td>
+              </tr>
+              <tr>
+                <td>Safe</td>
+                <td>
+                  Sisa lot konservatif berdasarkan
+                  <code>InpMaxMarginUsage</code>.
+                </td>
+              </tr>
+              <tr>
+                <td>Available</td>
+                <td>Estimasi lot berdasarkan free margin.</td>
+              </tr>
+              <tr>
+                <td>Max Capacity</td>
+                <td>Kapasitas teoritis berdasarkan equity.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Warna Margin Level</h3>
+          <ul>
+            <li>
+              Merah jika margin level lebih rendah dari
+              <code>InpMinMarginLevel</code>.
+            </li>
+            <li>Orange jika margin level di bawah dua kali batas minimum.</li>
+            <li>Kuning jika margin level di bawah tiga kali batas minimum.</li>
+            <li>Hijau jika margin level relatif aman.</li>
+          </ul>
+
+          <h3>Perhitungan Pips</h3>
+          <p>
+            EA menyesuaikan konversi pips untuk gold, silver, dan forex. Gold
+            dideteksi dari symbol yang mengandung
+            <code>XAU</code> atau <code>GOLD</code>. Silver dari
+            <code>XAG</code> atau <code>SILVER</code>. Forex memakai aturan
+            digit umum, yaitu 5/3 digit bernilai 10 point per pip, dan 4/2 digit
+            bernilai 1 point per pip.
+          </p>
+        </section>
+
+        <section id="margin-lines">
+          <h2>17. MC Line dan Liquidation Stop</h2>
+          <p>
+            EA membuat dua garis risiko saat ada posisi aktif milik EA pada
+            symbol chart: garis Margin Call/Stop Out dan garis Liquidation Stop
+            atau Zero Balance.
+          </p>
+
+          <h3>Margin Call / Stop Out Line</h3>
+          <p>
+            Garis MC memperkirakan level harga ketika equity mendekati batas
+            stop out broker. EA membaca equity, margin terpakai, stop out level
+            broker, tick value, tick size, total lot, dan arah net posisi.
+          </p>
+          <ul>
+            <li>
+              Jika net Buy lebih besar, garis MC diperkirakan berada di bawah
+              harga rata-rata Buy.
+            </li>
+            <li>
+              Jika net Sell lebih besar, garis MC diperkirakan berada di atas
+              harga rata-rata Sell.
+            </li>
+            <li>
+              Jika posisi hedged seimbang, EA memakai pendekatan konservatif
+              berdasarkan sisi Buy.
+            </li>
+          </ul>
+
+          <h3>Warna Garis MC</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Kondisi</th>
+                <th>Warna</th>
+                <th>Makna</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Equity left &lt; 10%</td>
+                <td>Merah</td>
+                <td>Sangat dekat dengan bahaya margin.</td>
+              </tr>
+              <tr>
+                <td>Equity left &lt; 25%</td>
+                <td>Orange red</td>
+                <td>Warning kuat.</td>
+              </tr>
+              <tr>
+                <td>Equity left &lt; 50%</td>
+                <td>Orange</td>
+                <td>Perlu waspada.</td>
+              </tr>
+              <tr>
+                <td>Lebih dari 50%</td>
+                <td>Gold</td>
+                <td>Masih relatif jauh, tetapi tetap perlu dipantau.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Liquidation Stop / Zero Balance Line</h3>
+          <p>
+            Garis ini memperkirakan level harga ketika equity menjadi nol.
+            Perhitungannya memakai equity saat ini, tick value, tick size, total
+            lot, dan arah net posisi dari harga market saat ini.
+          </p>
+
+          <div class="callout danger">
+            <strong>Interpretasi:</strong> garis Liquidation Stop bukan target
+            yang boleh ditunggu. Jika garis ini terlalu dekat dengan harga,
+            exposure posisi sudah terlalu besar dan risiko akun sangat tinggi.
+          </div>
+        </section>
+
+        <section id="cent">
+          <h2>18. Deteksi Akun Cent</h2>
+          <p>
+            EntryAjaib mencoba mendeteksi akun cent saat <code>OnInit()</code>.
+            Jika akun terdeteksi sebagai cent, <code>CentDivisor</code> diatur
+            menjadi <code>100.0</code> agar tampilan profit lebih wajar pada
+            panel.
+          </p>
+
+          <h3>Metode Deteksi</h3>
+          <ul>
+            <li>
+              Nama symbol mengandung <code>cent</code>, <code>.c</code>,
+              <code>_c</code>, atau berakhiran <code>c</code>.
+            </li>
+            <li>
+              Currency akun adalah <code>USC</code>, <code>EUC</code>,
+              <code>GBC</code>, <code>CHC</code>, <code>AUC</code>,
+              <code>NZC</code>, <code>CAC</code>, <code>JPY100</code>, atau
+              mengandung <code>CENT</code>.
+            </li>
+            <li>Path symbol mengandung kata <code>cent</code>.</li>
+            <li>Contract size symbol bernilai <code>1000.0</code>.</li>
+          </ul>
+        </section>
+
+        <section id="internal">
+          <h2>19. Fitur Internal di Kode</h2>
+          <p>
+            Di dalam <code>EntryAjaib.mq5</code> ada dua fungsi eksekusi yang
+            tersedia di kode, tetapi pada UI versi <code>30.77</code> tidak
+            terlihat tombol atau mapping click aktif yang memanggil fungsi
+            tersebut.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Fungsi</th>
+                <th>Perilaku</th>
+                <th>Status UI v30.77</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>ExecuteGridDirect()</code></td>
+                <td>
+                  Layer pertama market order, layer berikutnya pending limit
+                  berdasarkan GRID.
+                </td>
+                <td>Ada di kode, belum ada tombol aktif.</td>
+              </tr>
+              <tr>
+                <td><code>ExecuteMartingale()</code></td>
+                <td>Mirip Grid Direct, tetapi lot layer bertambah linear.</td>
+                <td>Ada di kode, belum ada tombol aktif.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout">
+            <strong>Jika ingin diaktifkan:</strong> perlu menambahkan tombol UI
+            seperti Grid Buy, Grid Sell, Marti Buy, Marti Sell, lalu menambahkan
+            handler di <code>OnChartEvent()</code>.
+          </div>
+        </section>
+        <section id="workflows">
+          <h2>20. Workflow Penggunaan</h2>
+
+          <h3>Workflow 1: Entry Cepat dengan Proteksi SL/TP</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Pastikan SL/TP ON</strong> Order baru akan membawa SL dan
+              TP otomatis.
+            </div>
+            <div class="step">
+              <strong>Atur LOT, SL, dan TP 1</strong> Pastikan risiko sesuai
+              akun.
+            </div>
+            <div class="step">
+              <strong>Klik BUY NOW atau SELL NOW</strong> EA membuka satu posisi
+              market.
+            </div>
+            <div class="step">
+              <strong>Aktifkan BEP atau TRAIL jika perlu</strong> Gunakan
+              setelah posisi bergerak profit.
+            </div>
+          </div>
+
+          <h3>Workflow 2: Plan Multi-Layer Normal</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Klik PLAN BUY atau PLAN SELL</strong> Buat rencana entry
+              di chart.
+            </div>
+            <div class="step">
+              <strong>Geser entry</strong> Tempatkan di level analisis.
+            </div>
+            <div class="step">
+              <strong>Atur GRID dan LYR</strong> Pastikan jarak layer dan total
+              exposure masuk akal.
+            </div>
+            <div class="step">
+              <strong>Baca Plan Info</strong> Cek risk, profit, dan R:R.
+            </div>
+            <div class="step">
+              <strong>Klik EX Normal</strong> EA membuat order multi-layer
+              dengan lot tetap.
+            </div>
+          </div>
+
+          <h3>Workflow 3: Plan Martingale</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Gunakan lot dasar kecil</strong> Total lot martingale
+              bertambah cepat.
+            </div>
+            <div class="step">
+              <strong>Buat Plan</strong> Pilih Plan Buy atau Plan Sell.
+            </div>
+            <div class="step">
+              <strong>Hitung total lot</strong> Pakai formula
+              <code>Lot x Layer x (Layer + 1) / 2</code>.
+            </div>
+            <div class="step">
+              <strong>Cek margin</strong> Lihat Safe Lot, Margin Level, MC line,
+              dan Liquidation Stop.
+            </div>
+            <div class="step">
+              <strong>Klik EX Martingle jika sudah siap</strong> Gunakan hanya
+              setelah semua risiko dihitung.
+            </div>
+          </div>
+
+          <h3>Workflow 4: Mengatur Target Basket</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Pastikan posisi sejenis tersedia</strong> Contoh beberapa
+              posisi Buy.
+            </div>
+            <div class="step">
+              <strong>Klik BASKET BUY atau BASKET SELL</strong> EA membuat garis
+              BEP dan TP.
+            </div>
+            <div class="step">
+              <strong>Geser TP basket</strong> Tempatkan target kolektif.
+            </div>
+            <div class="step">
+              <strong>Klik execute TP</strong> EA memasang TP ke semua posisi
+              basket.
+            </div>
+          </div>
+
+          <h3>Workflow 5: Mengunci Profit Manual dengan SL+</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Klik SL+</strong> EA membuat garis BEP dan SL.
+            </div>
+            <div class="step">
+              <strong>Geser SL ke area profit</strong> Untuk Buy, garis di atas
+              BEP berarti profit lock. Untuk Sell, garis di bawah BEP berarti
+              profit lock.
+            </div>
+            <div class="step">
+              <strong>Cek estimasi profit</strong> Panel akan menampilkan Est.
+              Profit jika garis berada di sisi profit.
+            </div>
+            <div class="step">
+              <strong>Klik Ex SL Buy atau Ex SL Sell</strong> EA memasang SL
+              kolektif.
+            </div>
+          </div>
+        </section>
+
+        <section id="risk">
+          <h2>21. Catatan Risiko</h2>
+          <div class="callout danger">
+            <strong>Trading berisiko tinggi.</strong> EntryAjaib membantu
+            eksekusi dan visualisasi risiko, tetapi tidak menghilangkan risiko
+            market, spread melebar, slippage, stop out, koneksi terputus, atau
+            kesalahan input lot.
+          </div>
+
+          <h3>Hal yang Harus Dicek Sebelum Entry</h3>
+          <ul>
+            <li>Chart symbol sudah benar.</li>
+            <li>Lot sudah sesuai modal.</li>
+            <li>SL/TP toggle sudah sesuai rencana.</li>
+            <li>Layer dan grid tidak terlalu agresif.</li>
+            <li>Total lot martingale sudah dihitung.</li>
+            <li>Margin level dan safe lot masih aman.</li>
+            <li>Garis MC dan Liquidation Stop tidak terlalu dekat.</li>
+            <li>
+              Broker mengizinkan jarak SL/TP sesuai stop level dan freeze level.
+            </li>
+          </ul>
+
+          <h3>Rekomendasi Penggunaan</h3>
+          <ul>
+            <li>Uji semua fitur di akun demo terlebih dahulu.</li>
+            <li>Gunakan lot kecil saat mencoba martingale.</li>
+            <li>
+              Jangan menambah layer hanya untuk mengejar harga tanpa rencana
+              exit.
+            </li>
+            <li>
+              Gunakan Basket TP dan SL+ untuk membuat exit kolektif yang jelas.
+            </li>
+            <li>
+              Gunakan BEP dan trailing setelah posisi bergerak profit, bukan
+              sebagai pengganti rencana risiko awal.
+            </li>
+          </ul>
+        </section>
+
+        <section id="push-notif">
+          <h2>22. Push Notification ke MT5 Mobile</h2>
+          <p>
+            Sejak versi <code>30.75</code>, EA dapat mengirim notifikasi ke
+            aplikasi MetaTrader 5 di HP setiap kali <strong>Pending Order</strong>
+            milik EA tereksekusi menjadi posisi. Fitur ini dikendalikan input
+            <code>InpPushNotifPending</code>.
+          </p>
+
+          <h3>Syarat Agar Notifikasi Terkirim</h3>
+          <div class="steps">
+            <div class="step">
+              <strong>Isi MetaQuotes ID di terminal</strong>
+              Buka <code>Tools &gt; Options &gt; Notifications</code>, centang
+              <code>Enable Push Notifications</code>, lalu isi MetaQuotes ID yang
+              tampil di menu <code>Messages</code> aplikasi MT5 mobile.
+            </div>
+            <div class="step">
+              <strong>Klik Test</strong>
+              Pastikan notifikasi percobaan masuk ke HP sebelum mengandalkan EA.
+            </div>
+            <div class="step">
+              <strong>Set Magic Number</strong>
+              Notifikasi hanya dikirim untuk deal dengan symbol chart aktif dan
+              Magic Number yang sama dengan <code>InpMagicNumber</code>.
+            </div>
+          </div>
+
+          <h3>Isi Pesan</h3>
+          <p>
+            Format pesan: tipe pending order, symbol, volume, harga eksekusi, dan
+            nomor ticket. Contoh:
+          </p>
+          <p>
+            <code>
+              Entry Ajaib: Pending BUY LIMIT XAUUSD 0.05 lot tereksekusi @
+              2648.15 (#123456789)
+            </code>
+          </p>
+
+          <h3>Filter dan Batasan</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Aspek</th>
+                <th>Perilaku</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jenis event</td>
+                <td>
+                  Hanya deal pembukaan posisi (<code>DEAL_ENTRY_IN</code>) yang
+                  berasal dari pending order. Market order dari
+                  <code>BUY NOW</code> / <code>SELL NOW</code> tidak memicu
+                  notifikasi, begitu juga close, SL hit, dan TP hit.
+                </td>
+              </tr>
+              <tr>
+                <td>Tipe order</td>
+                <td>
+                  Buy/Sell Limit, Buy/Sell Stop, dan Buy/Sell Stop Limit.
+                </td>
+              </tr>
+              <tr>
+                <td>Filter</td>
+                <td>Symbol chart aktif + Magic Number EA.</td>
+              </tr>
+              <tr>
+                <td>Rate limit</td>
+                <td>
+                  Server MetaQuotes membatasi ~2 notifikasi per detik. EA memakai
+                  antrian dengan jeda ~700&nbsp;ms per kirim, sehingga eksekusi
+                  banyak layer sekaligus tetap terkirim satu per satu, tidak ada
+                  yang hilang.
+                </td>
+              </tr>
+              <tr>
+                <td>Jika gagal</td>
+                <td>
+                  Pesan kena rate limit tetap disimpan dan dicoba lagi. Error lain
+                  (misalnya MetaQuotes ID belum diisi) membuat pesan dibuang agar
+                  antrian tidak macet, dan alasannya dicatat di tab
+                  <code>Experts</code>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout">
+            <strong>Tips:</strong> fitur ini paling berguna untuk plan
+            multi-layer. Anda tidak perlu memantau chart untuk tahu layer ke
+            berapa yang sudah kena.
+          </div>
+        </section>
+
+        <section id="responsive-ui">
+          <h2>23. Responsive UI (HiDPI / Retina)</h2>
+          <p>
+            Versi <code>30.76</code> membuat seluruh panel menyesuaikan diri
+            dengan resolusi layar dan ukuran chart. Sebelumnya semua dimensi
+            memakai angka pixel tetap, sehingga panel tampak sangat kecil di layar
+            HiDPI/Retina (MacBook, monitor 4K) dan teks tombol bisa terpotong.
+          </p>
+
+          <h3>Cara Kerja</h3>
+          <ul>
+            <li>
+              Seluruh dimensi dirancang untuk layar 96 DPI, lalu dikalikan faktor
+              skala yang dihitung otomatis dari DPI layar.
+            </li>
+            <li>
+              Lebar tombol dihitung dari <strong>lebar teks yang benar-benar
+              dirender</strong> terminal, bukan dari konstanta pixel. Inilah yang
+              mencegah label seperti <code>Set TP (1:2.0)</code> terpotong.
+            </li>
+            <li>
+              Layout ditata ulang otomatis saat ukuran chart berubah. Scroll dan
+              zoom tidak memicu relayout karena ukuran chart di-cache.
+            </li>
+            <li>
+              <code>Auto Fit</code> mengecilkan skala bertahap bila panel tidak
+              muat di chart yang sempit.
+            </li>
+          </ul>
+
+          <h3>Kalau Tampilan Masih Kurang Pas</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Gejala</th>
+                <th>Solusi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Panel terlalu kecil / terlalu besar</td>
+                <td>
+                  Isi <code>InpUIScale</code> manual, misalnya
+                  <code>1.25</code> atau <code>1.5</code>. Nilai
+                  <code>0</code> berarti otomatis.
+                </td>
+              </tr>
+              <tr>
+                <td>Teks tombol terpotong</td>
+                <td>
+                  Turunkan <code>InpUIFontDelta</code> ke <code>-1</code> atau
+                  <code>-2</code>.
+                </td>
+              </tr>
+              <tr>
+                <td>Teks terlalu kecil dibaca</td>
+                <td>Naikkan <code>InpUIFontDelta</code> ke <code>+1</code> atau lebih.</td>
+              </tr>
+              <tr>
+                <td>Panel menutupi chart di window kecil</td>
+                <td>
+                  Pastikan <code>InpUIAutoFit = true</code>, atau kecilkan
+                  <code>InpUIScale</code>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout">
+            <strong>Catatan versi 30.77:</strong> penataan ulang layout ditunda
+            sesaat (400&nbsp;ms) selama garis Plan, Basket TP, atau SL+ sedang
+            digeser. Memindahkan puluhan objek panel di tengah drag membuat
+            MetaTrader melepas pegangan pada garis yang sedang ditarik.
+          </div>
+        </section>
+
+        <section id="changelog">
+          <h2>24. Riwayat Versi</h2>
+
+          <h3>v30.77 &mdash; Perbaikan drag garis Plan</h3>
+          <ul>
+            <li>
+              Garis SL, TP, dan seluruh shadow layer kini bergerak real-time
+              mengikuti garis Entry selama ditarik. Sebelumnya baru menyusul
+              setelah tombol mouse dilepas, karena MetaTrader hanya mengirim
+              event drag satu kali di akhir. Berlaku juga untuk garis Basket TP
+              dan SL+.
+            </li>
+            <li>
+              Shadow line tidak lagi dihapus lalu dibuat ulang setiap update,
+              melainkan dipindahkan. Ini menghilangkan gejala drag putus dan
+              garis lompat.
+            </li>
+            <li>
+              Relayout panel ditunda selama drag berlangsung, lalu dijalankan
+              menyusul agar layout tetap menyesuaikan ukuran chart.
+            </li>
+            <li>
+              Label panel info tidak lagi ter-reset menjadi <code>---</code> saat
+              chart diubah ukurannya.
+            </li>
+          </ul>
+
+          <h3>v30.76 &mdash; Responsive UI</h3>
+          <ul>
+            <li>
+              Skala UI otomatis mengikuti DPI layar (HiDPI / Retina / MacBook).
+            </li>
+            <li>
+              Lebar tombol dihitung dari lebar teks yang dirender, sehingga label
+              tidak terpotong.
+            </li>
+            <li>Layout ditata ulang otomatis saat ukuran chart berubah.</li>
+            <li>
+              Input baru: <code>InpUIScale</code>, <code>InpUIFontDelta</code>,
+              <code>InpUIAutoFit</code>.
+            </li>
+          </ul>
+
+          <h3>v30.75 &mdash; Push Notification</h3>
+          <ul>
+            <li>
+              Push notification ke MT5 Mobile saat pending order tereksekusi,
+              lengkap dengan antrian anti rate-limit.
+            </li>
+            <li>Input baru: <code>InpPushNotifPending</code>.</li>
+            <li>
+              Status awal toggle SL/TP kini dapat diatur lewat input
+              <code>InpSLTPEnabled</code>.
+            </li>
+          </ul>
+        </section>
+
+        <section id="quick-reference">
+          <h2>25. Quick Reference</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Fitur</th>
+                <th>Tujuan</th>
+                <th>Langkah Singkat</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Buy Now</td>
+                <td>Market Buy cepat</td>
+                <td>Atur LOT, cek SL/TP, klik BUY NOW</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Sell Now</td>
+                <td>Market Sell cepat</td>
+                <td>Atur LOT, cek SL/TP, klik SELL NOW</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>SL/TP ON/OFF</td>
+                <td>Kontrol proteksi order baru</td>
+                <td>Klik toggle sebelum entry</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Set SL</td>
+                <td>Pasang ulang SL</td>
+                <td>Atur SL, klik Set SL</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Set TP</td>
+                <td>Pasang ulang TP</td>
+                <td>Atur TP 1, klik Set TP</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Reset SL/TP</td>
+                <td>Hapus SL dan TP</td>
+                <td>Klik Reset SL/TP</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Close Buy</td>
+                <td>Tutup semua Buy</td>
+                <td>Klik Close All Buy</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Close Sell</td>
+                <td>Tutup semua Sell</td>
+                <td>Klik Close All Sell</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Close All</td>
+                <td>Tutup semua posisi</td>
+                <td>Klik CLOSE ALL</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>DelPend</td>
+                <td>Hapus pending order EA</td>
+                <td>Klik DelPend</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Plan Buy</td>
+                <td>Rencana multi-layer Buy</td>
+                <td>Klik Plan Buy, geser garis, execute</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Plan Sell</td>
+                <td>Rencana multi-layer Sell</td>
+                <td>Klik Plan Sell, geser garis, execute</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>EX Normal</td>
+                <td>Eksekusi plan lot tetap</td>
+                <td>Aktifkan plan, klik EX Normal</td>
+                <td>Aktif saat plan</td>
+              </tr>
+              <tr>
+                <td>EX Martingle</td>
+                <td>Eksekusi plan lot bertambah</td>
+                <td>Aktifkan plan, klik EX Martingle</td>
+                <td>Aktif saat plan</td>
+              </tr>
+              <tr>
+                <td>Basket Buy</td>
+                <td>TP kolektif Buy</td>
+                <td>Klik Basket Buy, geser TP, execute</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Basket Sell</td>
+                <td>TP kolektif Sell</td>
+                <td>Klik Basket Sell, geser TP, execute</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>SL+</td>
+                <td>SL kolektif dan profit lock</td>
+                <td>Klik SL+, geser SL, execute Buy/Sell</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>BEP</td>
+                <td>Pindahkan SL ke break even plus buffer</td>
+                <td>Tunggu profit, klik BEP</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>TP 1/2</td>
+                <td>Partial close posisi profit</td>
+                <td>Atur persen panel, klik TP½ saat posisi profit</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Trailing</td>
+                <td>SL mengikuti harga profit</td>
+                <td>Atur TRAIL, klik TRAIL ON</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Position Stats</td>
+                <td>Monitoring P/L dan margin</td>
+                <td>Set InpShowPanel true (default true)</td>
+                <td>Opsional</td>
+              </tr>
+              <tr>
+                <td>MC Line</td>
+                <td>Estimasi stop out level</td>
+                <td>Muncul saat ada posisi EA</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Liquidation Stop</td>
+                <td>Estimasi equity nol</td>
+                <td>Muncul saat ada posisi EA</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Push Notif Mobile</td>
+                <td>Notifikasi saat pending order tereksekusi</td>
+                <td>Isi MetaQuotes ID di terminal, InpPushNotifPending true</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>UI Scaling</td>
+                <td>Panel menyesuaikan DPI layar dan ukuran chart</td>
+                <td>Otomatis; atur InpUIScale / InpUIFontDelta bila perlu</td>
+                <td>Aktif</td>
+              </tr>
+              <tr>
+                <td>Grid Direct</td>
+                <td>Grid market + pending</td>
+                <td>Perlu tombol tambahan</td>
+                <td>Kode-only</td>
+              </tr>
+              <tr>
+                <td>Martingale Direct</td>
+                <td>Grid dengan lot multiplier</td>
+                <td>Perlu tombol tambahan</td>
+                <td>Kode-only</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout success">
+            <strong>Penutup:</strong> dokumentasi ini dapat dibuka langsung di
+            browser. Untuk penggunaan real, selalu cocokkan angka lot, point,
+            margin, dan spread dengan kondisi broker yang sedang dipakai.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p>
+        Dokumentasi dibuat berdasarkan <code>EntryAjaib.mq5</code> versi
+        <code>30.77</code>. File ini bersifat panduan penggunaan, bukan saran
+        finansial.
+      </p>
+    </footer>
+  </body>
+</html>

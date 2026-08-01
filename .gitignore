@@ -1,0 +1,18 @@
+# Repo ini KHUSUS binary hasil compile.
+# Source code tidak boleh masuk ke sini — tempatnya di repo TVC.
+*.mq5
+*.mq4
+*.mqh
+*.ex4
+
+# Artefak build & log
+*.log
+build/
+tmp/
+
+# Sampah OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+*~

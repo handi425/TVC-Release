@@ -1,0 +1,6 @@
+# .ex5 adalah binary — jangan pernah di-diff atau di-normalisasi line ending
+*.ex5 binary
+*.ex4 binary
+
+# Dokumen teks
+*.md text eol=lf

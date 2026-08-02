@@ -3,6 +3,8 @@
 Repository distribusi **binary saja** untuk EA dan Indicator TVC.
 Hanya berisi file `.ex5` siap pakai — tidak ada source `.mq5`/`.mqh` di sini.
 
+youtube Channel: https://www.youtube.com/channel/UCv1c7dmBTLt03IuKicMY_bQ
+
 Source code disimpan di repository privat terpisah.
 
 ## Isi
